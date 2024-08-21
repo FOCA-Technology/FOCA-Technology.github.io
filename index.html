@@ -8,8 +8,7 @@
 
 
         .main-logo {
-            max-width: 120px;
-            max-height: 80px;
+            max-height: 100px;
         }
 
         .main-header {
@@ -52,15 +51,29 @@
             background-color: #f4f4f4;
         }
 
-        .section {
-            position: relative;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding-bottom: 100px; /* เพิ่มพื้นที่ด้านล่างสำหรับโลโก้ */
-        }
+        .page-logo {
+        max-width: 120px;
+        max-height: 80px;
+        position: absolute;
+        right: 10px; /* ปรับค่าตามที่ต้องการ */
+        bottom: 10px; /* ปรับค่าตามที่ต้องการ */
+        z-index: 10; /* ทำให้โลโก้อยู่ด้านบนของเนื้อหาอื่น */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* เรียงจากบนลงล่าง */
+    }
+
+    .section {
+        position: relative;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding-bottom: 100px; /* เพิ่มพื้นที่ด้านล่างสำหรับโลโก้ */
+    }
 
         .logo-container {
             position: absolute;
@@ -81,7 +94,7 @@
         }
 
         .section-content {
-            padding-right: 140px; /* สร้างพื้นที่ว่างด้านขวาเพื่อไม่ให้เนื้อหาทับกับโลโก้ */
+            padding-right: 0px; /* สร้างพื้นที่ว่างด้านขวาเพื่อไม่ให้เนื้อหาทับกับโลโก้ */
         }
 
         h1, h2, h3 {
@@ -106,12 +119,18 @@
         }
 
         .feature-item {
-            flex-basis: calc(33% - 10px);
+            flex: 0 1 calc(50% - 10px); /* ปรับขนาดให้แต่ละ item ครึ่งหนึ่งของ container */
+            box-sizing: border-box;
             margin-bottom: 15px;
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
         }
+            @media (max-width: 768px) {
+        .feature-item {
+            flex: 0 1 100%; /* ปรับขนาดให้แต่ละ item เต็มความกว้างของ container เมื่อหน้าจอเล็กกว่า 768px */
+        }
+        
 
         .comparison {
             display: flex;
