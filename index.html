@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AI-Powered Inspection in HDD Manufacturing - FOCA Technology Catalog</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
         <style>
             @keyframes fadeIn {
                 from { opacity: 0; }
                 to { opacity: 1; }
             }
-        
+
             body {
                 font-family: 'Arial', sans-serif;
                 line-height: 1.6;
@@ -20,16 +21,16 @@
                 background-color: #f4f4f4;
                 animation: fadeIn 1s ease-in;
             }
-        
+
             .main-logo {
                 max-height: 100px;
                 transition: transform 0.3s ease;
             }
-        
+
             .main-logo:hover {
                 transform: scale(1.1);
             }
-        
+
             .main-header {
                 text-align: center;
                 display: flex;
@@ -43,42 +44,47 @@
                 border-radius: 8px;
                 margin-bottom: 20px;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: background-color 0.5s ease;
             }
-        
+
+            .main-header.scrolled {
+                background-color: #FF8C00;
+            }
+
             .main-header .section-content {
                 max-width: 100%;
             }
-        
+
             .main-header h1, 
             .main-header h2, 
             .main-header h3 {
-                color: #656565; /* สีขาวสำหรับ h1, h2, h3 ใน main-header */
+                color: #ffffff;
             }
-        
+
             .section h2, 
             .section h3, 
             .cta h2, 
             .cta h3 {
-                color: #333333; /* สีเทาเข้มสำหรับ h1, h2, h3 ใน sections และ cta */
+                color: #333333;
             }
-        
+
             .main-header h1 {
                 font-size: 2.5em;
                 margin-bottom: 20px;
                 line-height: 1;
                 text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             }
-        
+
             .main-header p {
                 font-size: 1.2em;
             }
-        
+
             .main-header .logo-container {
                 position: absolute;
                 bottom: 20px;
                 right: 20px;
             }
-        
+
             .section {
                 position: relative;
                 background-color: #fff;
@@ -89,12 +95,12 @@
                 padding-bottom: 100px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-        
+
             .section:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             }
-        
+
             .logo-container {
                 position: absolute;
                 bottom: 0;
@@ -107,17 +113,17 @@
                 background-color: rgba(255, 255, 255, 0.8);
                 border-radius: 0 0 8px 0;
             }
-        
+
             .logo {
                 max-width: 120px;
                 max-height: 80px;
                 transition: transform 0.3s ease;
             }
-        
+
             .logo:hover {
                 transform: scale(1.1);
             }
-        
+
             img:not(.logo) {
                 max-width: 100%;
                 height: auto;
@@ -125,17 +131,17 @@
                 margin-bottom: 15px;
                 transition: transform 0.3s ease;
             }
-        
+
             img:not(.logo):hover {
                 transform: scale(1.05);
             }
-        
+
             .features {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
             }
-        
+
             .feature-item {
                 flex: 0 1 calc(50% - 10px);
                 box-sizing: border-box;
@@ -145,23 +151,23 @@
                 border-radius: 8px;
                 transition: background-color 0.3s ease;
             }
-        
+
             .feature-item:hover {
                 background-color: #FFE4B5;
             }
-        
+
             @media (max-width: 768px) {
                 .feature-item {
                     flex: 0 1 100%;
                 }
             }
-        
+
             .comparison {
                 display: flex;
                 justify-content: space-between;
                 margin-top: 20px;
             }
-        
+
             .comparison-column {
                 flex-basis: 48%;
                 background-color: #f9f9f9;
@@ -169,31 +175,31 @@
                 border-radius: 8px;
                 transition: background-color 0.3s ease;
             }
-        
+
             .comparison-column:hover {
                 background-color: #FFE4B5;
             }
-        
+
             .comparison h3 {
                 color: #FF8C00;
                 text-align: center;
             }
-        
+
             .comparison ul {
                 padding-left: 20px;
             }
-        
+
             @media (max-width: 768px) {
                 .comparison {
                     flex-direction: column;
                 }
-        
+
                 .comparison-column {
                     flex-basis: 100%;
                     margin-bottom: 20px;
                 }
             }
-        
+
             .cta {
                 text-align: center;
                 padding: 30px;
@@ -205,19 +211,19 @@
                 margin: 0 auto;
                 transition: background-color 0.3s ease;
             }
-        
+
             .cta:hover {
                 background-color: #FFA500;
             }
-        
+
             .cta h2 {
                 color: white;
             }
-        
+
             .cta h3 {
                 color: white;
             }
-        
+
             .contact-info {
                 display: flex;
                 justify-content: space-around;
@@ -227,42 +233,42 @@
                 box-sizing: border-box;
                 margin: 0 auto;
             }
-        
+
             .contact-column {
                 flex-basis: 45%;
                 box-sizing: border-box;
             }
-        
+
             @media (max-width: 600px) {
                 .contact-info {
                     flex-direction: column;
                     align-items: center;
                 }
-        
+
                 .contact-column {
                     flex-basis: 100%;
                     margin-bottom: 20px;
                     text-align: center;
                 }
             }
-        
+
             @media (min-width: 700px) {
                 .cta {
                     text-align: left;
                 }
-        
+
                 .contact-info {
                     justify-content: flex-start;
                     flex-direction: row;
                 }
-        
+
                 .contact-column {
                     flex-basis: auto;
                     margin-right: 40px;
                     text-align: left;
                 }
             }
-        
+
             .benefits {
                 background-color: #f0f8ff;
                 border-radius: 8px;
@@ -270,236 +276,251 @@
                 margin-top: 20px;
                 transition: background-color 0.3s ease;
             }
-        
+
             .benefits:hover {
                 background-color: #E6F3FF;
             }
-        
+
             .benefits h3 {
                 color: #FF8C00;
                 text-align: center;
             }
-        
+
             .benefits ul {
                 list-style-type: none;
                 padding: 0;
             }
-        
+
             .benefits li {
                 margin-bottom: 10px;
                 padding-left: 20px;
                 position: relative;
                 transition: transform 0.3s ease;
             }
-        
+
             .benefits li:hover {
                 transform: translateX(5px);
             }
-        
+
             .benefits li:before {
                 content: "✓";
                 color: #FF8C00;
                 position: absolute;
                 left: 0;
             }
-        
+
             html {
                 scroll-behavior: smooth;
             }
+
         </style>
-        
     </head>
-<body>
-    <div class="section main-header">
-        <div class="section-content centered">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="main-logo">
-            <h1>AI-Powered Inspection</h1>
-            <h2>of</h2>
-            <h1>Hard Disk Drive Manufacturing</h1>
-            <p>Cutting-edge AI Solutions for High-End Industry</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-content">
-            <h2>Introduction</h2>
-            <img src="assets/intro.png" alt="AI in HDD Manufacturing">
-            <p>In the rapidly evolving world of hard disk manufacturing, maintaining the highest quality standards is crucial. FOCA Technology's AI-powered inspection systems are revolutionizing the industry by providing unprecedented accuracy and efficiency in identifying defects and ensuring product integrity. This catalog explores our cutting-edge AI inspection solutions specifically designed for hard disk manufacturing.</p>
-        </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-content">
-            <h2>1. Surface Inspection</h2>
-            <img src="assets/surface.png" alt="Surface Inspection">
-            <p>Our AI-based surface inspection systems are designed to detect even the smallest imperfections on hard disk surfaces. These systems utilize advanced machine learning algorithms to identify scratches, dents, and other defects that could compromise the performance of the final product.</p>
-            <h3>Key Features:</h3>
-            <ul>
-                <li>High-resolution imaging for detailed surface analysis</li>
-                <li>AI-driven defect recognition with high precision</li>
-                <li>Automated rejection of defective disks</li>
-            </ul>
-            <p><strong>Applications:</strong> Ideal for use in hard disk manufacturing facilities where surface quality is paramount to product performance.</p>
-        </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-content">
-            <h2>2. Magnetic Head Inspection</h2>
-            <img src="assets/Head.png" alt="Magnetic Head Inspection">
-            <p>Magnetic head inspection is a critical process in hard disk manufacturing. Our AI-powered systems can analyze the alignment, positioning, and quality of magnetic heads with exceptional accuracy, reducing the risk of errors during data storage and retrieval.</p>
-            <h3>Key Features:</h3>
-            <ul>
-                <li>Precise alignment checks for optimal head positioning</li>
-                <li>Real-time data analysis and defect detection</li>
-                <li>Integration with existing manufacturing systems</li>
-            </ul>
-            <p><strong>Applications:</strong> Essential for ensuring the reliability and performance of hard disks, particularly in high-density storage solutions.</p>
-        </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-content">
-            <h2>3. Assembly Line Inspection</h2>
-            <img src="assets/35778_0.jpg" alt="Assembly Line Inspection">
-            <p>Our AI-driven assembly line inspection systems are designed to monitor and ensure the accuracy of every step in the hard disk assembly process. From component placement to final product testing, these systems provide real-time feedback and automated quality control.</p>
-            <h3>Key Features:</h3>
-            <ul>
-                <li>Comprehensive monitoring of the entire assembly process</li>
-                <li>AI algorithms that detect and correct errors in real-time</li>
-                <li>Seamless integration with existing manufacturing systems</li>
-            </ul>
-            <p><strong>Applications:</strong> Ideal for optimizing production efficiency and ensuring consistent quality in hard disk manufacturing.</p>
-        </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-content">
-            <h2>Advantages of FOCA's AI Inspection</h2>
-            <div class="features">
-                <div class="feature-item">
-                    <h3>Superhuman Precision</h3>
-                    <p>Our AI systems can detect defects at the nanometer scale, ensuring unparalleled quality control.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Consistency</h3>
-                    <p>FOCA's AI maintains the same level of scrutiny throughout long production runs, eliminating human error.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Speed</h3>
-                    <p>Our AI can process images and make decisions in milliseconds, significantly increasing production efficiency.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Learning and Adaptation</h3>
-                    <p>FOCA's machine learning models can be continuously updated to recognize new defect types and improve over time.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Data Integration</h3>
-                    <p>Our systems seamlessly integrate with your existing manufacturing data infrastructure for comprehensive analytics.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Cost-Effective</h3>
-                    <p>By reducing errors and improving efficiency, our AI inspection systems provide significant long-term cost savings.</p>
-                </div>
+    <body>
+        <div class="section main-header">
+            <div class="section-content centered">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="main-logo">
+                <h1>AI-Powered Inspection</h1>
+                <h2>of</h2>
+                <h1>Hard Disk Drive Manufacturing</h1>
+                <p>Cutting-edge AI Solutions for High-End Indrustry</p>
             </div>
         </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
 
-    <div class="section">
-        <div class="section-content">
-            <h2>Machine Learning Inspection vs. Traditional Vision Inspection</h2>
-            <p>At FOCA Technology, we leverage advanced Machine Learning (ML) techniques in our inspection systems. Here's how our ML-based inspection compares to traditional vision inspection:</p>
-
-            <div class="comparison">
-                <div class="comparison-column">
-                    <h3>Machine Learning Inspection</h3>
-                    <ul>
-                        <li><strong>Adaptive Learning:</strong> Can learn and adapt to new defect types without explicit programming.</li>
-                        <li><strong>Complex Pattern Recognition:</strong> Excels at identifying subtle or complex defects that might be missed by traditional systems.</li>
-                        <li><strong>Contextual Understanding:</strong> Can consider multiple factors and their relationships when making decisions.</li>
-                        <li><strong>Continuous Improvement:</strong> Performance improves over time as more data is processed.</li>
-                        <li><strong>Handling Variability:</strong> Better at dealing with variations in lighting, positioning, and product appearance.</li>
-                        <li><strong>Predictive Capabilities:</strong> Can predict potential issues before they become critical defects.</li>
-                    </ul>
-                </div>
-                <div class="comparison-column">
-                    <h3>Traditional Vision Inspection</h3>
-                    <ul>
-                        <li><strong>Fixed Programming:</strong> Relies on pre-programmed rules and thresholds.</li>
-                        <li><strong>Basic Pattern Matching:</strong> May struggle with defects that deviate from expected patterns.</li>
-                        <li><strong>Limited Context:</strong> Typically analyzes each feature in isolation.</li>
-                        <li><strong>Static Performance:</strong> Performance remains constant unless manually updated.</li>
-                        <li><strong>Sensitivity to Conditions:</strong> Can be significantly affected by changes in environmental conditions.</li>
-                        <li><strong>Reactive Approach:</strong> Identifies existing defects but lacks predictive capabilities.</li>
-                    </ul>
-                </div>
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>Introduction</h2>
+                <img src="assets/intro.png" alt="AI in HDD Manufacturing">
+                <p>In the rapidly evolving world of hard disk manufacturing, maintaining the highest quality standards is crucial.                 FOCA Technology's AI-powered inspection systems are revolutionizing the industry by providing unprecedented accuracy and efficiency in identifying defects and ensuring product integrity. This catalog explores our cutting-edge AI inspection solutions specifically designed for hard disk manufacturing.</p>
             </div>
-
-            <p>FOCA Technology's Machine Learning Inspection systems offer superior adaptability, accuracy, and efficiency compared to traditional vision inspection methods. Our AI-driven approach ensures that your HDD manufacturing process benefits from the latest advancements in computer vision and machine learning, resulting in higher quality products and improved production efficiency.</p>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
+            </div>
         </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
 
-    <div class="section">
-        <div class="section-content">
-            <h2>Customer Benefits</h2>
-            <div class="benefits">
-                <h3>Why Choose FOCA Technology's AI-Powered Inspection?</h3>
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>1. Surface Inspection</h2>
+                <img src="assets/surface.png" alt="Surface Inspection">
+                <p>Our AI-based surface inspection systems are designed to detect even the smallest imperfections on hard disk surfaces. These systems utilize advanced machine learning algorithms to identify scratches, dents, and other defects that could compromise the performance of the final product.</p>
+                <h3>Key Features:</h3>
                 <ul>
-                    <li><strong>Unparalleled Quality:</strong> Nanometer-scale defect detection ensures the highest product quality.</li>
-                    <li><strong>Increased Productivity:</strong> AI-driven rapid processing boosts manufacturing efficiency.</li>
-                    <li><strong>Long-term Cost Savings:</strong> Reduced defects and recalls lead to significant cost reductions.</li>
-                    <li><strong>Adaptability:</strong> Our systems learn and adapt to new defect types without reprogramming.</li>
-                    <li><strong>Valuable Insights:</strong> Real-time data analysis provides trends and predictive maintenance capabilities.</li>
-                    <li><strong>Seamless Integration:</strong> Works with your existing manufacturing infrastructure.</li>
-                    <li><strong>Enhanced Product Reliability:</strong> Thorough inspections increase the reliability of your hard disk drives.</li>
-                    <li><strong>Competitive Edge:</strong> Stay at the forefront of the industry with cutting-edge AI technology.</li>
+                    <li>High-resolution imaging for detailed surface analysis</li>
+                    <li>AI-driven defect recognition with high precision</li>
+                    <li>Automated rejection of defective disks</li>
                 </ul>
+                <p><strong>Applications:</strong> Ideal for use in hard disk manufacturing facilities where surface quality is paramount to product performance.</p>
+            </div>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
             </div>
         </div>
-        <div class="logo-container">
-            <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
-        </div>
-    </div>
 
-    <div class="cta">
-        <h2>Contact Us</h2>
-        <p>For more information or to schedule a demonstration of FOCA Technology's AI-powered inspection systems for hard disk manufacturing, please contact our sales team:</p>
-        <div class="contact-info">
-            <div class="contact-column">
-                <h3>Contact Details</h3>
-                <p>
-                    Email: seehadet@focatec.com<br>
-                    Phone: +66 (89) 451 6910
-                </p>
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>2. Magnetic Head Inspection</h2>
+                <img src="assets/Head.png" alt="Magnetic Head Inspection">
+                <p>Magnetic head inspection is a critical process in hard disk manufacturing. Our AI-powered systems can analyze the alignment, positioning, and quality of magnetic heads with exceptional accuracy, reducing the risk of errors during data storage and retrieval.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Precise alignment checks for optimal head positioning</li>
+                    <li>Real-time data analysis and defect detection</li>
+                    <li>Integration with existing manufacturing systems</li>
+                </ul>
+                <p><strong>Applications:</strong> Essential for ensuring the reliability and performance of hard disks, particularly in high-density storage solutions.</p>
             </div>
-            <div class="contact-column">
-                <h3>Address</h3>
-                <p>
-                    <strong>FOCA Technology Co., Ltd.</strong><br>
-                    42/46 Moo 8 Tambol Klongsong,<br>
-                    Amphoe Klongluang, Pathumthani 12120<br>
-                    Thailand
-                </p>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
             </div>
         </div>
-    </div>
-</body>
+
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>3. Assembly Line Inspection</h2>
+                <img src="assets/35778_0.jpg" alt="Assembly Line Inspection">
+                <p>Our AI-driven assembly line inspection systems are designed to monitor and ensure the accuracy of every step in the hard disk assembly process. From component placement to final product testing, these systems provide real-time feedback and automated quality control.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Comprehensive monitoring of the entire assembly process</li>
+                    <li>AI algorithms that detect and correct errors in real-time</li>
+                    <li>Seamless integration with existing manufacturing systems</li>
+                </ul>
+                <p><strong>Applications:</strong> Ideal for optimizing production efficiency and ensuring consistent quality in hard disk manufacturing.</p>
+            </div>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>Advantages of FOCA's AI Inspection</h2>
+                <div class="features">
+                    <div class="feature-item">
+                        <h3>Superhuman Precision</h3>
+                        <p>Our AI systems can detect defects at the nanometer scale, ensuring unparalleled quality control.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Consistency</h3>
+                        <p>FOCA's AI maintains the same level of scrutiny throughout long production runs, eliminating human error.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Speed</h3>
+                        <p>Our AI can process images and make decisions in milliseconds, significantly increasing production efficiency.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Learning and Adaptation</h3>
+                        <p>FOCA's machine learning models can be continuously updated to recognize new defect types and improve over time.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Data Integration</h3>
+                        <p>Our systems seamlessly integrate with your existing manufacturing data infrastructure for comprehensive analytics.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Cost-Effective</h3>
+                        <p>By reducing errors and improving efficiency, our AI inspection systems provide significant long-term cost savings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>Machine Learning Inspection vs. Traditional Vision Inspection</h2>
+                <p>At FOCA Technology, we leverage advanced Machine Learning (ML) techniques in our inspection systems. Here's how our ML-based inspection compares to traditional vision inspection:</p>
+
+                <div class="comparison">
+                    <div class="comparison-column">
+                        <h3>Machine Learning Inspection</h3>
+                        <ul>
+                            <li><strong>Adaptive Learning:</strong> Can learn and adapt to new defect types without explicit programming.</li>
+                            <li><strong>Complex Pattern Recognition:</strong> Excels at identifying subtle or complex defects that might be missed by traditional systems.</li>
+                            <li><strong>Contextual Understanding:</strong> Can consider multiple factors and their relationships when making decisions.</li>
+                            <li><strong>Continuous Improvement:</strong> Performance improves over time as more data is processed.</li>
+                            <li><strong>Handling Variability:</strong> Better at dealing with variations in lighting, positioning, and product appearance.</li>
+                            <li><strong>Predictive Capabilities:</strong> Can predict potential issues before they become critical defects.</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-column">
+                        <h3>Traditional Vision Inspection</h3>
+                        <ul>
+                            <li><strong>Fixed Programming:</strong> Relies on pre-programmed rules and thresholds.</li>
+                            <li><strong>Basic Pattern Matching:</strong> May struggle with defects that deviate from expected patterns.</li>
+                            <li><strong>Limited Context:</strong> Typically analyzes each feature in isolation.</li>
+                            <li><strong>Static Performance:</strong> Performance remains constant unless manually updated.</li>
+                            <li><strong>Sensitivity to Conditions:</strong> Can be significantly affected by changes in environmental conditions.</li>
+                            <li><strong>Reactive Approach:</strong> Identifies existing defects but lacks predictive capabilities.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>FOCA Technology's Machine Learning Inspection systems offer superior adaptability, accuracy, and efficiency compared to traditional vision inspection methods. Our AI-driven approach ensures that your HDD manufacturing process benefits from the latest advancements in computer vision and machine learning, resulting in higher quality products and improved production efficiency.</p>
+            </div>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <div class="section-content">
+                <h2>Customer Benefits</h2>
+                <div class="benefits">
+                    <h3>Why Choose FOCA Technology's AI-Powered Inspection?</h3>
+                    <ul>
+                        <li><strong>Unparalleled Quality:</strong> Nanometer-scale defect detection ensures the highest product quality.</li>
+                        <li><strong>Increased Productivity:</strong> AI-driven rapid processing boosts manufacturing efficiency.</li>
+                        <li><strong>Long-term Cost Savings:</strong> Reduced defects and recalls lead to significant cost reductions.</li>
+                        <li><strong>Adaptability:</strong> Our systems learn and adapt to new defect types without reprogramming.</li>
+                        <li><strong>Valuable Insights:</strong> Real-time data analysis provides trends and predictive maintenance capabilities.</li>
+                        <li><strong>Seamless Integration:</strong> Works with your existing manufacturing infrastructure.</li>
+                        <li><strong>Enhanced Product Reliability:</strong> Thorough inspections increase the reliability of your hard disk drives.</li>
+                        <li><strong>Competitive Edge:</strong> Stay at the forefront of the industry with cutting-edge AI technology.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
+            </div>
+        </div>
+
+        <div class="cta" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <p>For more information or to schedule a demonstration of FOCA Technology's AI-powered inspection systems for hard disk manufacturing, please contact our sales team:</p>
+            <div class="contact-info">
+                <div class="contact-column">
+                    <h3>Contact Details</h3>
+                    <p>
+                        Email: seehadet@focatec.com<br>
+                        Phone: +66 (89) 451 6910
+                    </p>
+                </div>
+                <div class="contact-column">
+                    <h3>Address</h3>
+                    <p>
+                        <strong>FOCA Technology Co., Ltd.</strong><br>
+                        42/46 Moo 8 Tambol Klongsong,<br>
+                        Amphoe Klongluang, Pathumthani 12120<br>
+                        Thailand
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init();
+
+            // Add background change on scroll
+            window.addEventListener('scroll', function() {
+                var header = document.querySelector('.main-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        </script>
+    </body>
 </html>
