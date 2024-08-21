@@ -5,37 +5,97 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AI-Powered Inspection in HDD Manufacturing - FOCA Technology Catalog</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-        <style>
-  /* แก้ไข CSS สำหรับการแสดง/ซ่อนเนื้อหาภาษา */
-  .en, .th {
-            display: none;
-        }
-        body:not(.th) .en {
-            display: inline-block;
-        }
-        body.th .th {
-            display: inline-block;
-        }
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+.language-selector, .scroll-to-top {
+        position: fixed;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
 
-        /* CSS อื่นๆ คงเดิม */
-        .language-selector {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+    .language-selector {
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .language-btn {
+        background-color: #FF8C00;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .language-btn:hover {
+        background-color: #FFA500;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .language-btn::before {
+        content: '🌐';
+        margin-right: 8px;
+        font-size: 20px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        background-color: #FF8C00;
+        color: white;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    .scroll-to-top:hover {
+        background-color: #FFA500;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .scroll-to-top i {
+        transition: all 0.3s ease;
+    }
+
+    .scroll-to-top:hover i {
+        transform: translateY(-2px);
+    }
+
+    .hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media (max-width: 768px) {
+        .scroll-to-top {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
         }
-        .language-btn {
-            background-color: #FF8C00;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .language-btn:hover {
-            background-color: #FFA500;
-        }
+    }
 
         /* CSS เดิมทั้งหมด */
         @keyframes fadeIn {
@@ -364,12 +424,13 @@
         </style>
     </head>
     <body>
-        <div class="language-selector">
-            <button class="language-btn" onclick="toggleLanguage()">
-                <span class="en">ภาษาไทย</span>
-                <span class="th">English</span>
-            </button>
-        </div>
+       
+<div class="language-selector" id="languageSelector">
+    <button class="language-btn" onclick="toggleLanguage()">
+        <span class="en">TH</span>
+        <span class="th">EN</span>
+    </button>
+</div>
 
         <div class="section main-header">
             <div class="section-content centered">
@@ -400,16 +461,41 @@
 
         <div class="section" data-aos="fade-up">
             <div class="section-content">
-                <h2>1. Surface Inspection</h2>
+                <h2>
+                    <span class="en">1. Surface Inspection</span>
+                    <span class="th">1. การตรวจสอบพื้นผิว</span>
+                </h2>
                 <img src="assets/surface.png" alt="Surface Inspection">
-                <p>Our AI-based surface inspection systems are designed to detect even the smallest imperfections on hard disk surfaces. These systems utilize advanced machine learning algorithms to identify scratches, dents, and other defects that could compromise the performance of the final product.</p>
-                <h3>Key Features:</h3>
+                <p>
+                    <span class="en">Our AI-based surface inspection systems are designed to detect even the smallest imperfections on hard disk surfaces. These systems utilize advanced machine learning algorithms to identify scratches, dents, and other defects that could compromise the performance of the final product.</span>
+                    <span class="th">ระบบตรวจสอบพื้นผิวด้วย AI ของเราได้รับการออกแบบมาเพื่อตรวจจับข้อบกพร่องเล็กๆ น้อยๆ บนพื้นผิวฮาร์ดดิสก์ ระบบเหล่านี้ใช้อัลกอริทึมการเรียนรู้ของเครื่องขั้นสูงเพื่อระบุรอยขีดข่วน รอยบุบ และข้อบกพร่องอื่นๆ ที่อาจส่งผลต่อประสิทธิภาพของผลิตภัณฑ์สุดท้าย</span>
+                </p>
+                <h3>
+                    <span class="en">Key Features:</span>
+                    <span class="th">คุณสมบัติหลัก:</span>
+                </h3>
                 <ul>
-                    <li>High-resolution imaging for detailed surface analysis</li>
-                    <li>AI-driven defect recognition with high precision</li>
-                    <li>Automated rejection of defective disks</li>
+                    <li>
+                        <span class="en">High-resolution imaging for detailed surface analysis</span>
+                        <span class="th">การถ่ายภาพความละเอียดสูงสำหรับการวิเคราะห์พื้นผิวอย่างละเอียด</span>
+                    </li>
+                    <li>
+                        <span class="en">AI-driven defect recognition with high precision</span>
+                        <span class="th">การจดจำข้อบกพร่องด้วย AI ที่มีความแม่นยำสูง</span>
+                    </li>
+                    <li>
+                        <span class="en">Automated rejection of defective disks</span>
+                        <span class="th">การคัดแยกดิสก์ที่มีข้อบกพร่องโดยอัตโนมัติ</span>
+                    </li>
                 </ul>
-                <p><strong>Applications:</strong> Ideal for use in hard disk manufacturing facilities where surface quality is paramount to product performance.</p>
+                <p>
+                    <strong>
+                        <span class="en">Applications:</span>
+                        <span class="th">การประยุกต์ใช้งาน:</span>
+                    </strong>
+                    <span class="en"> Ideal for use in hard disk manufacturing facilities where surface quality is paramount to product performance.</span>
+                    <span class="th"> เหมาะสำหรับใช้ในโรงงานผลิตฮาร์ดดิสก์ที่คุณภาพของพื้นผิวมีความสำคัญสำหรับประสิทธิภาพของผลิตภัณฑ์</span>
+                </p>
             </div>
             <div class="logo-container">
                 <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
@@ -418,16 +504,41 @@
 
         <div class="section" data-aos="fade-up">
             <div class="section-content">
-                <h2>2. Magnetic Head Inspection</h2>
+                <h2>
+                    <span class="en">2. Magnetic Head Inspection</span>
+                    <span class="th">2. การตรวจสอบหัวอ่าน/เขียนแม่เหล็ก</span>
+                </h2>
                 <img src="assets/Head.png" alt="Magnetic Head Inspection">
-                <p>Magnetic head inspection is a critical process in hard disk manufacturing. Our AI-powered systems can analyze the alignment, positioning, and quality of magnetic heads with exceptional accuracy, reducing the risk of errors during data storage and retrieval.</p>
-                <h3>Key Features:</h3>
+                <p>
+                    <span class="en">Magnetic head inspection is a critical process in hard disk manufacturing. Our AI-powered systems can analyze the alignment, positioning, and quality of magnetic heads with exceptional accuracy, reducing the risk of errors during data storage and retrieval.</span>
+                    <span class="th">การตรวจสอบหัวอ่าน/เขียนแม่เหล็กเป็นกระบวนการสำคัญในการผลิตฮาร์ดดิสก์ ระบบ AI ของเราสามารถวิเคราะห์การจัดตำแหน่ง การวางแนว และคุณภาพของหัวอ่าน/เขียนแม่เหล็กด้วยความแม่นยำสูง ช่วยลดความเสี่ยงของข้อผิดพลาดในระหว่างการเก็บและเรียกคืนข้อมูล</span>
+                </p>
+                <h3>
+                    <span class="en">Key Features:</span>
+                    <span class="th">คุณสมบัติหลัก:</span>
+                </h3>
                 <ul>
-                    <li>Precise alignment checks for optimal head positioning</li>
-                    <li>Real-time data analysis and defect detection</li>
-                    <li>Integration with existing manufacturing systems</li>
+                    <li>
+                        <span class="en">Precise alignment checks for optimal head positioning</span>
+                        <span class="th">การตรวจสอบการจัดแนวที่แม่นยำสำหรับการวางตำแหน่งหัวอ่าน/เขียนที่เหมาะสมที่สุด</span>
+                    </li>
+                    <li>
+                        <span class="en">Real-time data analysis and defect detection</span>
+                        <span class="th">การวิเคราะห์ข้อมูลและตรวจจับข้อบกพร่องแบบเรียลไทม์</span>
+                    </li>
+                    <li>
+                        <span class="en">Integration with existing manufacturing systems</span>
+                        <span class="th">การผสานรวมกับระบบการผลิตที่มีอยู่</span>
+                    </li>
                 </ul>
-                <p><strong>Applications:</strong> Essential for ensuring the reliability and performance of hard disks, particularly in high-density storage solutions.</p>
+                <p>
+                    <strong>
+                        <span class="en">Applications:</span>
+                        <span class="th">การประยุกต์ใช้งาน:</span>
+                    </strong>
+                    <span class="en"> Essential for ensuring the reliability and performance of hard disks, particularly in high-density storage solutions.</span>
+                    <span class="th"> จำเป็นสำหรับการรับประกันความน่าเชื่อถือและประสิทธิภาพของฮาร์ดดิสก์ โดยเฉพาะอย่างยิ่งในโซลูชันการจัดเก็บข้อมูลความจุสูง</span>
+                </p>
             </div>
             <div class="logo-container">
                 <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
@@ -436,16 +547,41 @@
 
         <div class="section" data-aos="fade-up">
             <div class="section-content">
-                <h2>3. Assembly Line Inspection</h2>
+                <h2>
+                    <span class="en">3. Assembly Line Inspection</span>
+                    <span class="th">3. การตรวจสอบสายการประกอบ</span>
+                </h2>
                 <img src="assets/35778_0.jpg" alt="Assembly Line Inspection">
-                <p>Our AI-driven assembly line inspection systems are designed to monitor and ensure the accuracy of every step in the hard disk assembly process. From component placement to final product testing, these systems provide real-time feedback and automated quality control.</p>
-                <h3>Key Features:</h3>
+                <p>
+                    <span class="en">Our AI-driven assembly line inspection systems are designed to monitor and ensure the accuracy of every step in the hard disk assembly process. From component placement to final product testing, these systems provide real-time feedback and automated quality control.</span>
+                    <span class="th">ระบบตรวจสอบสายการประกอบด้วย AI ของเราถูกออกแบบมาเพื่อตรวจสอบและรับประกันความแม่นยำของทุกขั้นตอนในกระบวนการประกอบฮาร์ดดิสก์ ตั้งแต่การวางองค์ประกอบจนถึงการทดสอบผลิตภัณฑ์สุดท้าย ระบบเหล่านี้ให้ข้อเสนอและควบคุมคุณภาพโดยอัตโนมัติแบบเรียลไทม์</span>
+                </p>
+                <h3>
+                    <span class="en">Key Features:</span>
+                    <span class="th">คุณสมบัติหลัก:</span>
+                </h3>
                 <ul>
-                    <li>Comprehensive monitoring of the entire assembly process</li>
-                    <li>AI algorithms that detect and correct errors in real-time</li>
-                    <li>Seamless integration with existing manufacturing systems</li>
+                    <li>
+                        <span class="en">Comprehensive monitoring of the entire assembly process</span>
+                        <span class="th">การตรวจสอบครอบคลุมทั้งกระบวนการประกอบ</span>
+                    </li>
+                    <li>
+                        <span class="en">AI algorithms that detect and correct errors in real-time</span>
+                        <span class="th">อัลกอริทึม AI ที่ตรวจจับและแก้ไขข้อผิดพลาดแบบเรียลไทม์</span>
+                    </li>
+                    <li>
+                        <span class="en">Seamless integration with existing manufacturing systems</span>
+                        <span class="th">การผสานรวมอย่างราบรื่นกับระบบการผลิตที่มีอยู่</span>
+                    </li>
                 </ul>
-                <p><strong>Applications:</strong> Ideal for optimizing production efficiency and ensuring consistent quality in hard disk manufacturing.</p>
+                <p>
+                    <strong>
+                        <span class="en">Applications:</span>
+                        <span class="th">การประยุกต์ใช้งาน:</span>
+                    </strong>
+                    <span class="en"> Ideal for optimizing production efficiency and ensuring consistent quality in hard disk manufacturing.</span>
+                    <span class="th"> เหมาะสำหรับการเพิ่มประสิทธิภาพการผลิตและรับรองคุณภาพที่สม่ำเสมอในการผลิตฮาร์ดดิสก์</span>
+                </p>
             </div>
             <div class="logo-container">
                 <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
@@ -454,31 +590,70 @@
 
         <div class="section" data-aos="fade-up">
             <div class="section-content">
-                <h2>Advantages of FOCA's AI Inspection</h2>
+                <h2>
+                    <span class="en">Advantages of FOCA's AI Inspection</span>
+                    <span class="th">ข้อได้เปรียบของการตรวจสอบด้วย AI ของ FOCA</span>
+                </h2>
                 <div class="features">
                     <div class="feature-item">
-                        <h3>Superhuman Precision</h3>
-                        <p>Our AI systems can detect defects at the nanometer scale, ensuring unparalleled quality control.</p>
+                        <h3>
+                            <span class="en">Superhuman Precision</span>
+                            <span class="th">ความแม่นยำ</span>
+                        </h3>
+                        <p>
+                            <span class="en">Our AI systems can detect microscopic defects with exceptional precision, ensuring unparalleled quality control.</span>
+                            <span class="th">ระบบ AI ของเราสามารถตรวจจับข้อบกพร่องขนาดเล็กมากด้วยความแม่นยำสูง ทำให้มั่นใจในการควบคุมคุณภาพที่เหนือชั้น</span>
+                        </p>
                     </div>
                     <div class="feature-item">
-                        <h3>Consistency</h3>
-                        <p>FOCA's AI maintains the same level of scrutiny throughout long production runs, eliminating human error.</p>
+                        <h3>
+                            <span class="en">Consistency</span>
+                            <span class="th">ความสม่ำเสมอ</span>
+                        </h3>
+                        <p>
+                            <span class="en">FOCA's AI maintains the same level of scrutiny throughout long production runs, eliminating human error.</span>
+                            <span class="th">AI ของ FOCA รักษาระดับการตรวจสอบอย่างละเอียดตลอดการผลิตที่ยาวนาน ขจัดข้อผิดพลาดของมนุษย์</span>
+                        </p>
                     </div>
                     <div class="feature-item">
-                        <h3>Speed</h3>
-                        <p>Our AI can process images and make decisions in milliseconds, significantly increasing production efficiency.</p>
+                        <h3>
+                            <span class="en">Speed</span>
+                            <span class="th">ความเร็ว</span>
+                        </h3>
+                        <p>
+                            <span class="en">Our AI can process images and make decisions in milliseconds, significantly increasing production efficiency.</span>
+                            <span class="th">AI ของเราสามารถประมวลผลภาพและตัดสินใจภายในเวลาเพียงมิลลิวินาที เพิ่มประสิทธิภาพการผลิตอย่างมีนัยสำคัญ</span>
+                        </p>
                     </div>
                     <div class="feature-item">
-                        <h3>Learning and Adaptation</h3>
-                        <p>FOCA's machine learning models can be continuously updated to recognize new defect types and improve over time.</p>
+                        <h3>
+                            <span class="en">Learning and Adaptation</span>
+                            <span class="th">การเรียนรู้และการปรับตัว</span>
+                        </h3>
+                        <p>
+                            <span class="en">FOCA's machine learning models can be continuously updated to recognize new defect types and improve over time.</span>
+                            <span class="th">โมเดลการเรียนรู้ของเครื่องของ FOCA สามารถอัปเดตอย่างต่อเนื่องเพื่อจดจำประเภทของข้อบกพร่องใหม่ๆ และปรับปรุงประสิทธิภาพตลอดเวลา</span>
+                        </p>
                     </div>
                     <div class="feature-item">
-                        <h3>Data Integration</h3>
-                        <p>Our systems seamlessly integrate with your existing manufacturing data infrastructure for comprehensive analytics.</p>
+                        <h3>
+                            <span class="en">Integration</span>
+                            <span class="th">การบูรณาการข้อมูล</span>
+                        </h3>
+                        <p>
+                            <span class="en">Our systems seamlessly integrate with your existing manufacturing data infrastructure for comprehensive analytics.</span>
+                            <span class="th">ระบบของเราผสานรวมกับโครงสร้างพื้นฐานข้อมูลการผลิตที่มีอยู่ของคุณได้อย่างราบรื่นเพื่อการวิเคราะห์ที่ครอบคลุม</span>
+                        </p>
                     </div>
                     <div class="feature-item">
-                        <h3>Cost-Effective</h3>
-                        <p>By reducing errors and improving efficiency, our AI inspection systems provide significant long-term cost savings.</p>
+                        <h3>
+                            <span class="en">Cost-Effective</span>
+                            <span class="th">ความคุ้มค่า</span>
+                        </h3>
+                        <p>
+                            <span class="en">By reducing errors and improving efficiency, our AI inspection systems provide significant long-term cost savings.</span>
+                            <span class="th">ด้วยการลดข้อผิดพลาดและเพิ่มประสิทธิภาพ ระบบตรวจสอบด้วย AI ของเราช่วยประหยัดค่าใช้จ่ายในระยะยาวอย่างมีนัยสำคัญ</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -489,35 +664,134 @@
 
         <div class="section" data-aos="fade-up">
             <div class="section-content">
-                <h2>Machine Learning Inspection vs. Traditional Vision Inspection</h2>
-                <p>At FOCA Technology, we leverage advanced Machine Learning (ML) techniques in our inspection systems. Here's how our ML-based inspection compares to traditional vision inspection:</p>
+                <h2>
+                    <span class="en">Machine Learning Inspection vs. Traditional Vision Inspection</span>
+                    <span class="th">การตรวจสอบด้วยการเรียนรู้ของเครื่อง vs. การตรวจสอบด้วยวิชันแบบดั้งเดิม</span>
+                </h2>
+                <p>
+                    <span class="en">At FOCA Technology, we leverage advanced Machine Learning (ML) techniques in our inspection systems. Here's how our ML-based inspection compares to traditional vision inspection:</span>
+                    <span class="th">ที่ FOCA Technology เราใช้เทคนิคการเรียนรู้ของเครื่อง (ML) ขั้นสูงในระบบตรวจสอบของเรา นี่คือวิธีที่การตรวจสอบด้วย ML ของเราเปรียบเทียบกับการตรวจสอบด้วยวิชันแบบดั้งเดิม:</span>
+                </p>
 
                 <div class="comparison">
                     <div class="comparison-column">
-                        <h3>Machine Learning Inspection</h3>
+                        <h3>
+                            <span class="en">Machine Learning Inspection</span>
+                            <span class="th">การตรวจสอบด้วยการเรียนรู้ของเครื่อง</span>
+                        </h3>
                         <ul>
-                            <li><strong>Adaptive Learning:</strong> Can learn and adapt to new defect types without explicit programming.</li>
-                            <li><strong>Complex Pattern Recognition:</strong> Excels at identifying subtle or complex defects that might be missed by traditional systems.</li>
-                            <li><strong>Contextual Understanding:</strong> Can consider multiple factors and their relationships when making decisions.</li>
-                            <li><strong>Continuous Improvement:</strong> Performance improves over time as more data is processed.</li>
-                            <li><strong>Handling Variability:</strong> Better at dealing with variations in lighting, positioning, and product appearance.</li>
-                            <li><strong>Predictive Capabilities:</strong> Can predict potential issues before they become critical defects.</li>
+                            <li>
+                                <strong>
+                                    <span class="en">Adaptive Learning:</span>
+                                    <span class="th">การเรียนรู้และการปรับตัว</span>
+                                </strong>
+                                <span class="en"> Can learn and adapt to new defect types without explicit programming.</span>
+                                <span class="th"> สามารถเรียนรู้และปรับตัวกับประเภทข้อบกพร่องใหม่ๆ โดยไม่ต้องเขียนโปรแกรมใหม่</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Complex Pattern Recognition:</span>
+                                    <span class="th">การรู้จำรูปแบบที่ซับซ้อน:</span>
+                                </strong>
+                                <span class="en"> Excels at identifying subtle or complex defects that might be missed by traditional systems.</span>
+                                <span class="th"> เชี่ยวชาญในการระบุข้อบกพร่องที่ละเอียดหรือซับซ้อนซึ่งอาจถูกมองข้ามโดยระบบแบบดั้งเดิม</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Contextual Understanding:</span>
+                                    <span class="th">ความเข้าใจบริบท:</span>
+                                </strong>
+                                <span class="en"> Can consider multiple factors and their relationships when making decisions.</span>
+                                <span class="th"> สามารถพิจารณาปัจจัยหลายอย่างและความสัมพันธ์ระหว่างกันในการตัดสินใจ</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Continuous Improvement:</span>
+                                    <span class="th">การปรับปรุงอย่างต่อเนื่อง:</span>
+                                </strong>
+                                <span class="en"> Performance improves over time as more data is processed.</span>
+                                <span class="th"> ประสิทธิภาพดีขึ้นเมื่อเวลาผ่านไปเมื่อมีการประมวลผลข้อมูลมากขึ้น</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Handling Variability:</span>
+                                    <span class="th">การจัดการความแปรปรวน:</span>
+                                </strong>
+                                <span class="en"> Better at dealing with variations in lighting, positioning, and product appearance.</span>
+                                <span class="th"> จัดการกับความแปรปรวนในแสง ตำแหน่ง และลักษณะของผลิตภัณฑ์ได้ดีกว่า</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Predictive Capabilities:</span>
+                                    <span class="th">ความสามารถในการคาดการณ์:</span>
+                                </strong>
+                                <span class="en"> Can predict potential issues before they become critical defects.</span>
+                                <span class="th"> สามารถคาดการณ์ปัญหาที่อาจเกิดขึ้นก่อนที่จะกลายเป็นข้อบกพร่องที่สำคัญ</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="comparison-column">
-                        <h3>Traditional Vision Inspection</h3>
+                        <h3>
+                            <span class="en">Traditional Vision Inspection</span>
+                            <span class="th">การตรวจสอบด้วยวิชันแบบดั้งเดิม</span>
+                        </h3>
                         <ul>
-                            <li><strong>Fixed Programming:</strong> Relies on pre-programmed rules and thresholds.</li>
-                            <li><strong>Basic Pattern Matching:</strong> May struggle with defects that deviate from expected patterns.</li>
-                            <li><strong>Limited Context:</strong> Typically analyzes each feature in isolation.</li>
-                            <li><strong>Static Performance:</strong> Performance remains constant unless manually updated.</li>
-                            <li><strong>Sensitivity to Conditions:</strong> Can be significantly affected by changes in environmental conditions.</li>
-                            <li><strong>Reactive Approach:</strong> Identifies existing defects but lacks predictive capabilities.</li>
+                            <li>
+                                <strong>
+                                    <span class="en">Fixed Programming:</span>
+                                    <span class="th">การเขียนโปรแกรมแบบคงที่:</span>
+                                </strong>
+                                <span class="en"> Relies on pre-programmed rules and thresholds.</span>
+                                <span class="th"> อาศัยกฎและเกณฑ์ที่กำหนดไว้ล่วงหน้า</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Basic Pattern Matching:</span>
+                                    <span class="th">การจับคู่รูปแบบพื้นฐาน:</span>
+                                </strong>
+                                <span class="en"> May struggle with defects that deviate from expected patterns.</span>
+                                <span class="th"> อาจมีปัญหากับข้อบกพร่องที่เบี่ยงเบนไปจากรูปแบบที่คาดหวัง</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Limited Context:</span>
+                                    <span class="th">บริบทจำกัด:</span>
+                                </strong>
+                                <span class="en"> Typically analyzes each feature in isolation.</span>
+                                <span class="th"> โดยทั่วไปวิเคราะห์แต่ละคุณลักษณะแยกกัน</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Static Performance:</span>
+                                    <span class="th">ประสิทธิภาพคงที่:</span>
+                                </strong>
+                                <span class="en"> Performance remains constant unless manually updated.</span>
+                                <span class="th"> ประสิทธิภาพคงที่เว้นแต่จะมีการอัปเดตด้วยตนเอง</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Sensitivity to Conditions:</span>
+                                    <span class="th">ความไวต่อสภาพแวดล้อม:</span>
+                                </strong>
+                                <span class="en"> Can be significantly affected by changes in environmental conditions.</span>
+                                <span class="th"> อาจได้รับผลกระทบอย่างมากจากการเปลี่ยนแปลงของสภาพแวดล้อม</span>
+                            </li>
+                            <li>
+                                <strong>
+                                    <span class="en">Reactive Approach:</span>
+                                    <span class="th">วิธีการแบบตั้งรับ:</span>
+                                </strong>
+                                <span class="en"> Identifies existing defects but lacks predictive capabilities.</span>
+                                <span class="th"> ระบุข้อบกพร่องที่มีอยู่แต่ขาดความสามารถในการคาดการณ์</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <p>FOCA Technology's Machine Learning Inspection systems offer superior adaptability, accuracy, and efficiency compared to traditional vision inspection methods. Our AI-driven approach ensures that your HDD manufacturing process benefits from the latest advancements in computer vision and machine learning, resulting in higher quality products and improved production efficiency.</p>
+                <p>
+                    <span class="en">FOCA Technology's Machine Learning Inspection systems offer superior adaptability, accuracy, and efficiency compared to traditional vision inspection methods. Our AI-driven approach ensures that your HDD manufacturing process benefits from the latest advancements in computer vision and machine learning, resulting in higher quality products and improved production efficiency.</span>
+                    <span class="th">ระบบตรวจสอบด้วยการเรียนรู้ของเครื่องของ FOCA Technology มอบความสามารถในการปรับตัว ความแม่นยำ และประสิทธิภาพที่เหนือกว่าเมื่อเทียบกับวิธีการตรวจสอบด้วยวิชันแบบดั้งเดิม วิธีการที่ขับเคลื่อนด้วย AI ของเรารับประกันว่ากระบวนการผลิต HDD ของคุณจะได้รับประโยชน์จากความก้าวหน้าล่าสุดในด้านคอมพิวเตอร์วิชันและการเรียนรู้ของเครื่อง ส่งผลให้ได้ผลิตภัณฑ์ที่มีคุณภาพสูงขึ้นและปรับปรุงประสิทธิภาพการผลิต</span>
+                </p>
             </div>
             <div class="logo-container">
                 <img src="assets/Foca_ubg.png" alt="FOCA Technology Logo" class="logo">
@@ -526,18 +800,80 @@
 
         <div class="section" data-aos="fade-up">
             <div class="section-content">
-                <h2>Customer Benefits</h2>
+                <h2>
+                    <span class="en">Customer Benefits</span>
+                    <span class="th">สิ่งที่ลูกค้าได้รับ</span>
+                </h2>
                 <div class="benefits">
-                    <h3>Why Choose FOCA Technology's AI-Powered Inspection?</h3>
+                    <h3>
+                        <span class="en">Why Choose FOCA Technology's AI-Powered Inspection?</span>
+                        <span class="th">ทำไมต้องเลือกระบบตรวจสอบด้วย AI ของ FOCA Technology?</span>
+                    </h3>
                     <ul>
-                        <li><strong>Unparalleled Quality:</strong> Nanometer-scale defect detection ensures the highest product quality.</li>
-                        <li><strong>Increased Productivity:</strong> AI-driven rapid processing boosts manufacturing efficiency.</li>
-                        <li><strong>Long-term Cost Savings:</strong> Reduced defects and recalls lead to significant cost reductions.</li>
-                        <li><strong>Adaptability:</strong> Our systems learn and adapt to new defect types without reprogramming.</li>
-                        <li><strong>Valuable Insights:</strong> Real-time data analysis provides trends and predictive maintenance capabilities.</li>
-                        <li><strong>Seamless Integration:</strong> Works with your existing manufacturing infrastructure.</li>
-                        <li><strong>Enhanced Product Reliability:</strong> Thorough inspections increase the reliability of your hard disk drives.</li>
-                        <li><strong>Competitive Edge:</strong> Stay at the forefront of the industry with cutting-edge AI technology.</li>
+                        <li>
+                            <strong>
+                                <span class="en">Unparalleled Quality:</span>
+                                <span class="th">คุณภาพที่ไม่มีใครเทียบ:</span>
+                            </strong>
+                            <span class="en">Highly precise defect detection ensures superior product quality.</span>
+                            <span class="th">การตรวจจับข้อบกพร่องที่แม่นยำสูงรับประกันคุณภาพผลิตภัณฑ์ที่เป็นเลิศ</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Increased Productivity:</span>
+                                <span class="th">เพิ่มผลผลิต:</span>
+                            </strong>
+                            <span class="en"> AI-driven rapid processing boosts manufacturing efficiency.</span>
+                            <span class="th"> การประมวลผลอย่างรวดเร็วด้วย AI เพิ่มประสิทธิภาพการผลิต</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Long-term Cost Savings:</span>
+                                <span class="th">ประหยัดค่าใช้จ่ายในระยะยาว:</span>
+                            </strong>
+                            <span class="en"> Reduced defects and recalls lead to significant cost reductions.</span>
+                            <span class="th"> ลดข้อบกพร่องและการเรียกคืนสินค้า นำไปสู่การลดต้นทุนอย่างมีนัยสำคัญ</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Adaptability:</span>
+                                <span class="th">ความสามารถในการปรับตัว:</span>
+                            </strong>
+                            <span class="en"> Our systems learn and adapt to new defect types without reprogramming.</span>
+                            <span class="th"> ระบบของเราเรียนรู้และปรับตัวกับประเภทข้อบกพร่องใหม่ๆ โดยไม่ต้องเขียนโปรแกรมใหม่</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Valuable Insights:</span>
+                                <span class="th">ข้อมูลเชิงลึกที่มีคุณค่า:</span>
+                            </strong>
+                            <span class="en"> Real-time data analysis provides trends and predictive maintenance capabilities.</span>
+                            <span class="th"> การวิเคราะห์ข้อมูลแบบเรียลไทม์ให้แนวโน้มและความสามารถในการบำรุงรักษาเชิงคาดการณ์</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Seamless Integration:</span>
+                                <span class="th">การผสานรวมอย่างราบรื่น:</span>
+                            </strong>
+                            <span class="en"> Works with your existing manufacturing infrastructure.</span>
+                            <span class="th"> ทำงานร่วมกับโครงสร้างพื้นฐานการผลิตที่มีอยู่ของคุณ</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Enhanced Product Reliability:</span>
+                                <span class="th">เพิ่มความน่าเชื่อถือของผลิตภัณฑ์:</span>
+                            </strong>
+                            <span class="en"> Thorough inspections increase the reliability of your hard disk drives.</span>
+                            <span class="th"> การตรวจสอบอย่างละเอียดเพิ่มความน่าเชื่อถือของฮาร์ดดิสก์ไดรฟ์ของคุณ</span>
+                        </li>
+                        <li>
+                            <strong>
+                                <span class="en">Competitive Edge:</span>
+                                <span class="th">ความได้เปรียบในการแข่งขัน:</span>
+                            </strong>
+                            <span class="en"> Stay at the forefront of the industry with cutting-edge AI technology.</span>
+                            <span class="th"> อยู่แนวหน้าของอุตสาหกรรมด้วยเทคโนโลยี AI ล้ำสมัย</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -547,27 +883,109 @@
         </div>
 
         <div class="cta" data-aos="fade-up">
-            <h2>Contact Us</h2>
-            <p>For more information or to schedule a demonstration of FOCA Technology's AI-powered inspection systems for hard disk manufacturing, please contact our sales team:</p>
+            <h2>
+                <span class="en">Contact Us</span>
+                <span class="th">ติดต่อเรา</span>
+            </h2>
+            <p>
+                <span class="en">For more information or to schedule a demonstration of FOCA Technology's AI-powered inspection systems for hard disk manufacturing, please contact our sales team:</span>
+                <span class="th">สำหรับข้อมูลเพิ่มเติมหรือเพื่อนัดหมายการสาธิตระบบตรวจสอบด้วย AI ของ FOCA Technology สำหรับการผลิตฮาร์ดดิสก์ โปรดติดต่อทีมขายของเรา:</span>
+            </p>
             <div class="contact-info">
                 <div class="contact-column">
-                    <h3>Contact Details</h3>
+                    <h3>
+                        <span class="en">Contact Details</span>
+                        <span class="th">รายละเอียดการติดต่อ</span>
+                    </h3>
                     <p>
+                        <span class="en">
                         Email: seehadet@focatec.com<br>
                         Phone: +66 (89) 451 6910
+                        </span>
+                        <span class="th">
+                        อีเมล: seehadet@focatec.com<br>
+                        โทรศัพท์: +66 (89) 451 6910
+                        </span>
                     </p>
                 </div>
                 <div class="contact-column">
-                    <h3>Address</h3>
+                    <h3>
+                        <span class="en">Address</span>
+                        <span class="th">ที่อยู่</span>
+                    </h3>
                     <p>
-                        <strong>FOCA Technology Co., Ltd.</strong><br>
+                        <strong>
+                            <span class="en">FOCA Technology Co., Ltd.</span>
+                            <span class="th">บริษัท โฟก้า เทคโนโลยี จำกัด</span>
+                        </strong>
+                        <span class="en">
+                        <br>
                         42/46 Moo 8 Tambol Klongsong,<br>
                         Amphoe Klongluang, Pathumthani 12120<br>
                         Thailand
+                        </span>
+                        <span class="th">
+                        <br>
+                        42/46 หมู่ 8 ตำบลคลองสอง<br>
+                        อำเภอคลองหลวง ปทุมธานี 12120<br>
+                        ประเทศไทย
+                        </span>
                     </p>
                 </div>
             </div>
         </div>
+
+        <div class="scroll-to-top" id="scrollToTop" title="Go to top">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    
+        <script>
+            const languageSelector = document.getElementById("languageSelector");
+            const scrollToTopButton = document.getElementById("scrollToTop");
+            let lastScrollTop = 0;
+        
+            window.addEventListener("scroll", function() {
+                let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+                // ซ่อนปุ่มภาษาเมื่อเลื่อนลง แสดงเมื่อเลื่อนขึ้น
+                if (currentScroll > lastScrollTop) {
+                    languageSelector.classList.add("hide");
+                } else {
+                    languageSelector.classList.remove("hide");
+                }
+        
+                // แสดงปุ่มเลื่อนขึ้นด้านบนเมื่อเลื่อนลงมากกว่า 300px
+                if (currentScroll > 300) {
+                    scrollToTopButton.classList.add("show");
+                } else {
+                    scrollToTopButton.classList.remove("show");
+                }
+        
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // สำหรับ Mobile หรือ negative scrolling
+            }, false);
+        
+            scrollToTopButton.onclick = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            };
+        
+            function toggleLanguage() {
+                document.body.classList.toggle('th');
+                updateLanguageVisibility();
+            }
+        
+            function updateLanguageVisibility() {
+                const isThai = document.body.classList.contains('th');
+                document.querySelectorAll('.en, .th').forEach(el => {
+                    el.style.display = el.classList.contains(isThai ? 'th' : 'en') ? 'inline-block' : 'none';
+                });
+            }
+        
+            // เรียกใช้ฟังก์ชันเมื่อโหลดหน้าเว็บ
+            document.addEventListener('DOMContentLoaded', updateLanguageVisibility);
+        </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script>
