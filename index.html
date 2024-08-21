@@ -5,42 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Inspection in HDD Manufacturing - FOCA Technology Catalog</title>
     <style>
-
-
-        .main-logo {
-            max-height: 100px;
-        }
-
-        .main-header {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 300px;
-            position: relative;
-        }
-
-            .main-header .section-content {
-                max-width: 100%;
-            }
-
-            .main-header h1 {
-                font-size: 2.5em;
-                margin-bottom: 20px;
-                line-height: 1; /* ปรับระยะห่างระหว่างบรรทัด */
-            }
-
-            .main-header p {
-                font-size: 1.2em;
-            }
-
-            .main-header .logo-container {
-                position: absolute;
-                bottom: 20px;
-                right: 20px;
-            }
-
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -50,31 +14,65 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
-
+    
+        .main-logo {
+            max-height: 100px;
+        }
+    
+        .main-header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            position: relative;
+        }
+    
+        .main-header .section-content {
+            max-width: 100%;
+        }
+    
+        .main-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+    
+        .main-header p {
+            font-size: 1.2em;
+        }
+    
+        .main-header .logo-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    
         .page-logo {
-        max-width: 120px;
-        max-height: 80px;
-        position: absolute;
-        right: 10px; /* ปรับค่าตามที่ต้องการ */
-        bottom: 10px; /* ปรับค่าตามที่ต้องการ */
-        z-index: 10; /* ทำให้โลโก้อยู่ด้านบนของเนื้อหาอื่น */
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column; /* เรียงจากบนลงล่าง */
-    }
-
-    .section {
-        position: relative;
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        padding-bottom: 100px; /* เพิ่มพื้นที่ด้านล่างสำหรับโลโก้ */
-    }
-
+            max-width: 120px;
+            max-height: 80px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 10;
+        }
+    
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .section {
+            position: relative;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding-bottom: 100px;
+        }
+    
         .logo-container {
             position: absolute;
             bottom: 0;
@@ -84,138 +82,177 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.8); /* พื้นหลังโปร่งใสเล็กน้อย */
-            border-radius: 0 0 8px 0; /* ทำให้มุมล่างขวาโค้งเข้ากับ section */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 8px 0;
         }
-
+    
         .logo {
             max-width: 120px;
             max-height: 80px;
         }
-
+    
         .section-content {
-            padding-right: 0px; /* สร้างพื้นที่ว่างด้านขวาเพื่อไม่ให้เนื้อหาทับกับโลโก้ */
+            padding-right: 0px;
         }
-
+    
         h1, h2, h3 {
             color: #FF8C00;
         }
-
+    
         h1 {
             margin-bottom: 30px;
         }
-
+    
         img:not(.logo) {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             margin-bottom: 15px;
         }
-
+    
         .features {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
+    
         .feature-item {
-            flex: 0 1 calc(50% - 10px); /* ปรับขนาดให้แต่ละ item ครึ่งหนึ่งของ container */
+            flex: 0 1 calc(50% - 10px);
             box-sizing: border-box;
             margin-bottom: 15px;
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
         }
-            @media (max-width: 768px) {
-        .feature-item {
-            flex: 0 1 100%; /* ปรับขนาดให้แต่ละ item เต็มความกว้างของ container เมื่อหน้าจอเล็กกว่า 768px */
+    
+        @media (max-width: 768px) {
+            .feature-item {
+                flex: 0 1 100%;
+            }
         }
-        
-
+    
         .comparison {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
         }
-
+    
         .comparison-column {
             flex-basis: 48%;
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
         }
-
+    
         .comparison h3 {
             color: #FF8C00;
             text-align: center;
         }
-
+    
         .comparison ul {
             padding-left: 20px;
         }
-
+    
         .cta {
             text-align: center;
             padding: 30px;
             background-color: #FF8C00;
             color: white;
             border-radius: 8px;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
         }
 
+        .cta h2 {
+    color: white; /* กำหนดสีตัวอักษรเป็นสีขาว */
+}
+    
+.cta h2 {
+    color: white; /* กำหนดสีตัวอักษรของ Contact Us เป็นสีขาว */
+}
+
+.cta h3 {
+    color: white; /* กำหนดสีตัวอักษรของ Contact Details และ Address เป็นสีขาว */
+}
         .contact-info {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
             text-align: left;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
         }
-
+    
         .contact-column {
             flex-basis: 45%;
+            box-sizing: border-box;
+        }
+    
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .contact-column {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+                text-align: center;
+            }
         }
 
-            .contact-column h3 {
-                color: white;
-                margin-bottom: 10px;
-            }
+        @media (min-width: 700px) {
+    .cta {
+        text-align: left;
+    }
 
-        .cta p {
-            margin-bottom: 10px;
-        }
+    .contact-info {
+        justify-content: flex-start;
+        flex-direction: row;
+    }
 
-            .cta h2 {
-                color: white;
-            }
+    .contact-column {
+        flex-basis: auto; /* ทำให้ column ปรับขนาดตามเนื้อหา */
+        margin-right: 40px; /* เว้นระยะห่างระหว่าง Contact Details กับ Address */
+        text-align: left; /* จัดข้อความชิดซ้าย */
+    }
+}
 
+        
+    
         .benefits {
             background-color: #f0f8ff;
             border-radius: 8px;
             padding: 20px;
             margin-top: 20px;
         }
-
-            .benefits h3 {
-                color: #FF8C00;
-                text-align: center;
-            }
-
-            .benefits ul {
-                list-style-type: none;
-                padding: 0;
-            }
-
-            .benefits li {
-                margin-bottom: 10px;
-                padding-left: 20px;
-                position: relative;
-            }
-
-                .benefits li:before {
-                    content: "✓";
-                    color: #FF8C00;
-                    position: absolute;
-                    left: 0;
-                }
+    
+        .benefits h3 {
+            color: #FF8C00;
+            text-align: center;
+        }
+    
+        .benefits ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .benefits li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+    
+        .benefits li:before {
+            content: "✓";
+            color: #FF8C00;
+            position: absolute;
+            left: 0;
+        }
     </style>
+    
 </head>
 <body>
     <div class="section main-header">
